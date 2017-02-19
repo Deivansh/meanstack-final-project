@@ -1,0 +1,23 @@
+<h1>Add new movies here...</h1>
+<div class="table-responsive">
+<table class="table">
+    <thead>
+      <tr>
+        <th>Movie Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input ng-model="contact.moviename" /></td>
+        <td><button ng-click="addmovie(contact)" class="btn btn-primary">Add Movie</button></td>
+        <td><button ng-click="updatemovie()" class="btn btn-primary">Update</button></td>
+      </tr>
+
+      <tr ng-repeat="c in contactlist">
+        <td>{{c.moviename}}</td>
+        <td><button ng-click="editmovie(c)" class="btn btn-primary">Edit Movie</button></td>
+        <td><button ng-click="deletemovie(c)" class="btn btn-primary">Delete Movie</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

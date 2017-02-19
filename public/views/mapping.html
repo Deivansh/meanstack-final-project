@@ -1,0 +1,91 @@
+
+<!-- <script type="text/javascript" src="./js/jquery-1.11.1.js"></script> -->
+ <!-- <script type="text/javascript" src="./js/jquery-ui-1.11.1.js"></script> -->
+<!-- <script type="text/javascript" src="./js/jquery-2.1.1.js"></script> -->
+<script type="text/javascript" src="./js/jquery-ui-1.11.1.js"></script>
+<script type="text/javascript" src="./js/jquery-ui.multidatespicker.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/mdp.css">
+<link rel="stylesheet" type="text/css" href="./css/prettify.css">
+<!-- <script type="text/javascript" src="./js/prettify.js"></script>
+<script type="text/javascript" src="./js/lang-css.js"></script> -->
+<div class="container-fluid" >
+<h1>Map theatres and Movies here...</h1>
+<div class="table-responsive">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Movie Name</th>
+      <th>Theatre</th>
+      <th>Dates</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tr>
+    <td><div class="form-group" >
+  <select class="form-control" ng-model="contactcity.mm" style="width: auto;" >
+    <option ng-repeat="c in contactlist">{{c.moviename}}</option>
+  </select>
+ </div></td>
+ <td><div class="form-group" >
+ <select class="form-control" ng-model="contactcity.tt" style="width: auto;">
+ <option ng-repeat="c in theatrelist">{{c.theatrestates}},{{c.theatrename}},{{c.theatrelocation}}</option>
+ </select>
+ </div></td>
+ <td><div class="form-group">
+          <div class='input-group date' >
+            <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar" ></span>
+            </span>
+              <input type='text' class="form-control" id="datetimepicker1" />
+          </div>
+      </div>
+</td>
+<td>
+  <div class="form-group">
+    <label>Select Hours:</label>
+    <select class="form-control" style="width: auto;" id="hrs">
+    <option ng-repeat="h in hr">{{h}}</option>
+    </select>
+  </td>
+  <td>
+<label>Select Minutes:</label>
+<select class="form-control" style="width: auto;" id="mins">
+<option ng-repeat="m in mn">{{m}}</option>
+</select></td>
+</div>
+</td>
+<td>
+  <button ng-click="gh(); gm(); ins();" style="margin-bottom: 10px;">ok</button>
+  <button ng-click="del()">del</button>
+</td>
+<td>
+  <div class="form-group">
+        <label for="comment">Timmings:</label>
+        <textarea class="form-control" rows="5" column="2" id="comment" style="width: auto;"></textarea>
+      </div>
+</td>
+</tr>
+<tr>
+  <td>
+    <button class="btn btn-primary" ng-click="ok()">SAVE</button>
+  </td>
+  <td>
+    <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+  </td>
+  <!-- <td>
+    <button class="btn btn-primary" ng-click="addtime()">Insert Another timmings</button>
+  </td> -->
+</tr>
+<hr>
+<thead>
+  <th style="text-align:center;">Mapped Details:</th>
+</thead>
+<tr ng-repeat="x in map">
+  <td>{{x.moviTitle}}</td>
+  <td>{{x.TN[0].name[0].t1}}</td>
+  <td>{{x.TN[0].name[0].d1[0]}}</td>
+  <td>{{x.TN[0].name[0].tm1[0]}}</td>
+  <td><button class="btn-danger" ng-click="deletemapping(x)">Delete</button></td>
+</tr>
+</div>
+</div>

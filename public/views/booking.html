@@ -1,0 +1,116 @@
+<head>
+  <link rel="stylesheet" type="text/css" media="all" href="./css/whhg.css">
+  <link rel="stylesheet" href="./css/booking.css">
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+
+</head>
+<body>
+<!-- <h1>booking hello</h1> -->
+<div class="container-fluid" id="nameheader">
+<div class="row">
+<div class="col-sm-4 container-fluid">
+<div id="trailer" class="col-sm-12">
+   <iframe style="height:200px; margin-top:5px;" class="embed-responsive-item" id="player"  src="https://www.youtube.com/embed/" type="text/html"  allowfullscreen/>
+</div>
+</div>
+
+<div class="col-sm-4 container-fluid" id="innerheader"  >
+  <!-- <div > -->
+  <h1 style="text-align:center;font-weight:bold;font-style: italic;color:#000000;">{{home_obj_movname}}</h1>
+<dl>
+  <dt style="color:#000000;">Actors:</dt>
+    <dd>{{home_obj_movact}}</dd>
+  <dt style="color:#000000;">Genre:</dt>
+    <dd>{{home_obj_movgen}}</dd>
+    <dt style="color:#000000;">Director:</dt>
+      <dd>{{home_obj_movdir}}</dd>
+  </dl>
+<!-- </div> -->
+</div>
+<div class="col-sm-4 container-fluid" id="bookimage">
+  <img style="height:200px;margin-top:5px;"  class="img-responsive img-thumbnail" src={{home_obj_movimg}}>
+</div>
+</div>
+</div>
+<!-- <br><br><br> -->
+<div class="container-fluid" id="info_header">
+  <br>
+<div class="row">
+  <div class="col-sm-9 container-fluid" id="inner_info">
+    <br>
+    <div class="container-fluid">
+<div class="row">
+
+    <div class="col-sm-4">
+    <div class="form-group" >
+    <select class="form-control" id="select" ng-model="contactbook.bthname"  style="width:auto;">
+    <option ng-repeat="c in t">{{theatrelist[c].TN[0].name[0].t1}}</option>
+    </select>
+    </div>
+  </div>
+  <div class="col-sm-1">
+    <button ng-click="proceed1()" class="btn btn-info">Proceed</button>
+  </div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-sm-8">
+    <label>Dates:</label>
+    <div >
+    <label ng-repeat="q in lis2" id="labe"  class="radio-inline"><input  type="radio" name="optradio1" ng-click="myFunction()" value="{{q}}" required>{{q}}</label>
+  </div>
+</div>
+</div></div><br>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-sm-8">
+    <label>Timings:</label>
+    <div >
+    <label ng-repeat="t in lis"  class="radio-inline"><input type="radio" name="optradio2" ng-click="myFunction()" value="{{t}}" required>{{t}}</label>
+  </div>
+  <div class="col-md-8"><br><br>
+    <label>Enter Number Of Seats: </label><input type="number" ng-model="n_seat" class="form-control" placeholder="Enter Number Of Seats" required/>
+  </div>
+</div>
+</div></div>
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-7" >
+<div id="i" style="display:none;background-color:white;width:auto;height:auto;box-shadow:0px 10px 30px #F11712;opacity:0.5;z-index:50;margin-top:0px;text-align:center;border-radius:30px;">
+</div>
+<br>
+<br>
+<div id="i2" style="background-color:white;width:auto;height:auto;box-shadow:0px 10px 30px #F11712;opacity:0.5;z-index:50;margin-top:0px;text-align:center;border-radius:30px;">
+</div>
+<!-- <hr> -->
+<label style="text-align:center; margin-left:200px;margin-top:0;">Screen this Way.</label>
+<br>
+</div>
+<div class="col-sm-5">
+<button class="btn btn-primary" style="margin-top:100px;" ng-click="select()">ok</button>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+  <div class="panel panel-info" style="width:100%;height:100%;">
+      <div class="panel-heading">Summary:</div>
+      <div class="panel-body">
+        <p><strong>Theatre Name:</strong> {{contactbook.bthname}}</p>
+        <p><strong>Date:</strong> {{radiodate}}</p>
+        <p><strong>Time:</strong> {{radiotime}}</p>
+        <p><strong>Seats:</strong> {{n_seat}}<li ng-repeat="x in seatarr">#{{x}}</li></p>
+        <p><strong>Price:</strong> Rs. {{price}}</p>
+      </div>
+      <div class="panel-footer">
+        <a href="" role="button" id="confirmhref" ng-click="validate();confirm()"  class="btn btn-success">Confirm & Pay</a>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- AIzaSyC4ZpRRNTE-wQldCPcMSSbSqxtTSWH6r0E -->
+</body>

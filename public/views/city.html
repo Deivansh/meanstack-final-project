@@ -1,0 +1,26 @@
+<div class="container-fluid">
+<h1>Add Cities here...</h1>
+<div class="table-responsive">
+<table class="table">
+    <thead>
+      <tr>
+
+        <th>City Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input ng-model="contact.cityname" /></td>
+        <td><button ng-click="addcity()" class="btn btn-primary">Add City</button></td>
+        <td><button ng-click="updatecity()" class="btn btn-primary">Update City</button></td>
+      </tr>
+
+      <tr ng-repeat="c in contactlist">
+        <td>{{c.cityname}}</td>
+        <td><button ng-click="editcity(c)" class="btn btn-primary">Edit City</button></td>
+        <td><button ng-click="deletecity(c)" class="btn btn-primary">Delete City</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
